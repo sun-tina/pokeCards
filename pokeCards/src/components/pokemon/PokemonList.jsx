@@ -17,7 +17,12 @@ async componentDidMount(){
     return (
         <div>
             {this.state.pokemon ? 
-            (<div className='row'> {this.state.pokemon.map(poke =>(<PokemonCard/>))}</div>) 
+            (<div className='row'> {this.state.pokemon.map(pokemon =>(
+              <PokemonCard
+                key={pokemon.name}
+                name={pokemon.name}
+                url={pokemon.url}
+            />))}</div>) 
             : 
             (<h1>!!!!!Loading !! Pokemon!!!!!</h1>)}
       </div>
